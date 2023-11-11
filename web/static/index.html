@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Taller Sainapsis</title>
+    </head>
+    <body>
+        <h1>Tienes preguntas sobre la Escuela?</h1>
+        <form>
+            <label for="question">Escribelas aqui que yo te las respondo:</label><br>
+            <input id="question" /><br><br>
+            <button onclick="getQuestion(event)">Enviar</button>
+        </form>
+        <p id="loading-msg" style="display: none;">Pensando...</p>
+        <p id="answer" style="display: none;"></p>
+        <script>
+            let getQuestion = (e) => {
+                e.preventDefault();
+                document.getElementById("loading-msg").style = "";
+                document.getElementById("answer").style = "display: none;";
+                let question = document.getElementById("question").value;
+                fetch(`http://127.0.0.1:5000/eci_info?q=${question}`)
+                .then((res) => res.text())
+                .then((res) => {
+                    document.getElementById("loading-msg").style = "display: none;";
+                    document.getElementById("answer").style = "";
+                    document.getElementById("answer").innerText = res;
+                });
+            }
+        </script>
+    </body>
+</html>
