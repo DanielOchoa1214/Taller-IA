@@ -51,8 +51,8 @@ Para preguntar solo ingresa la pregunta y dale click en el boton de enviar, si t
 ## Construido con
 
 * Amor
-* [Maven](https://maven.apache.org/) - Administrador de dependencias
-* [IntelliJ IDEA](https://www.jetbrains.com/es-es/idea/) - IDE de desarrollo
+* [Python](https://www.python.org/) - Lenguaje de programación
+* [PyCharm IDEA](https://www.jetbrains.com/es-es/pycharm/) - IDE de desarrollo
 
 ## Version
 
